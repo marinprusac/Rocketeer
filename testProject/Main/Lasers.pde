@@ -35,13 +35,14 @@ class Laser extends Rocket{
   public void shoot(){
     
     if (shootCooldown==0 && hitpoints > 0){
-      laser.play();
+      //laser.play();
       super.shoot();
       Bullet bullet = new LaserBullet(pos.x+cos(angle+PI/4)*30, pos.y+sin(angle+PI/4)*30, angle, this);
       putSpaceObject(bullet);
       bullet = new LaserBullet(pos.x+cos(angle-PI/4)*30, pos.y+sin(angle-PI/4)*30, angle, this);
       putSpaceObject(bullet);
       shootCooldown = newShootCooldown;
+      course = course.add(Vect.newAM(angle,shock/2f));
     }
   }
   

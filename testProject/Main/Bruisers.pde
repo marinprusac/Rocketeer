@@ -10,7 +10,7 @@ class Bruiser extends Rocket{
   
   float ultTypeCooldown = 0;
   float maxUltTypeCooldown = 15;
-  float maxBoostFrames = 100;
+  float maxBoostFrames = 20;
   float boostFrames = 0;
   boolean usedReturn = false;
   

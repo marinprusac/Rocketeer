@@ -1,17 +1,21 @@
 public class Game {
   
-  int numOfAsteroids = 15;
+  int numOfAsteroids = 50;
  
 
   public void prepareToPlay(){
     //s.stop();
-    r1 = new Sniper(maxX/10,9*maxY/10,-PI/4,skins.get("Stardust Sniper"));
-    r2 = new Bruiser(9*maxX/10,9*maxY/10,-3*PI/4,skins.get("Magma Bruiser"));
+    
+    r1 = new Jumper(maxX/10,9*maxY/10,-PI/2,skins.get("Sparrow Jumper"));
+    r2 = new Bruiser(9*maxX/10,9*maxY/10,-PI/2,skins.get("Magma Bruiser"));
+    r3 = new Defender(3*maxX/10,9*maxY/10, -PI/2,skins.get("Thorn Defender"));
+    r4 = new Sniper(7*maxX/10,9*maxY/10, -PI/2,skins.get("Void Sniper"));
+    
     spaceObjects.clear();
     players.clear();
     gp = GamePhase.PLAY;
     placeAsteroids(numOfAsteroids);
-    game.addPlayers(r1,r2);
+    game.addPlayers(r1,r2,r3,r4);
   }
   
   public void showText(String text, float size, float posx, float posy, float sx, float sy) {
@@ -35,7 +39,7 @@ public class Game {
   }
   
   public void adjustFps(){
-    fpsAdjust = 60f/frameRate * 0.8;
+    fpsAdjust = 60f/frameRate;
   }
   
   public void refresh(){

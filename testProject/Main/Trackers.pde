@@ -19,7 +19,7 @@ class Tracker extends Rocket {
     translate(pos.x,pos.y);
     pushMatrix();
     rotate(angle);
-    rotate(PI/2);
+    rotate(PI/2);    
     image(img,0,0);
     tint(255,(selected!=null&&selected.hitpoints>0?255:0));
     image(imgU,0,0);

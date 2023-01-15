@@ -3,6 +3,8 @@ import java.util.Arrays;
 import processing.sound.*;
 import java.time.LocalDateTime;
 
+static String path = "D:\\Data\\Dev\\Finished Projects\\Rocketeer\\testProject";
+
 static float fpsAdjust;
 static int maxX;
 static int maxY;
@@ -35,6 +37,8 @@ GamePhase gp = GamePhase.BACKSTORY;
 SoundFile s;
 Rocket r1;
 Rocket r2;
+Rocket r3;
+Rocket r4;
 
 Game game = new Game();
 
@@ -52,14 +56,14 @@ void setup(){
   //s.amp(0.5);
   //s.play();
   imageMode(CENTER);
-  img = loadImage ("C:\\Users\\Zrinka\\Desktop\\testProject\\assets\\space2.jpg");
-  boxImg = loadImage("C:\\Users\\Zrinka\\Desktop\\testProject\\assets\\box3.png");
-  font = loadFont("C:\\Users\\Zrinka\\Desktop\\testProject\\Main\\data\\cons.vlw");
+  img = loadImage (path + "\\assets\\space2.jpg");
+  boxImg = loadImage(path + "\\assets\\box3.png");
+  font = loadFont(path + "\\Main\\data\\cons.vlw");
   img.resize(maxX,maxY);
   noStroke();
   rectMode(CENTER);
 
-  laser = new SoundFile(this,"C:\\Users\\Zrinka\\Desktop\\testProject\\assets\\Sounds\\laser_shoot.mp3");
+  laser = new SoundFile(this, path + "\\assets\\Sounds\\laser_shoot.mp3");
   game.placeAsteroids(50);
 
 }

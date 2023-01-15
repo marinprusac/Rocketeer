@@ -1,6 +1,5 @@
 public class Ore extends SpaceObject{
   
-  String path = "C:\\Users\\Zrinka\\Desktop\\testProject\\assets";
   String ext = ".png";
   String sep  = "\\";
   
@@ -28,7 +27,7 @@ public class Ore extends SpaceObject{
         return;
     }
     name += "Buff";
-    img = loadImage(path + sep + name + ext);
+    img = loadImage(path + "\\assets" + sep + name + ext);
   }
   
   AsteroidType type;

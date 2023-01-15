@@ -1,7 +1,6 @@
 class Asteroid extends SpaceObject{
   
   String[] asteroidSkins = {"a","ap","ab","ar","ag"};
-  String path = "C:\\Users\\Zrinka\\Desktop\\testProject\\assets";
   String ext = ".png";
   String sep  = "\\";
   
@@ -28,8 +27,8 @@ class Asteroid extends SpaceObject{
         name = "ag";
         break;
     }
-    img = loadImage(path+sep+name+rand+ext);
-    imgE = loadImage(path+sep+name+"E"+ext);
+    img = loadImage(path+"\\assets"+sep+name+rand+ext);
+    imgE = loadImage(path+"\\assets"+sep+name+"E"+ext);
     img.resize((int)size*2,(int)size*2);
     imgE.resize((int)size*2,(int)size*2);
     rotP = random(-0.005,0.005);

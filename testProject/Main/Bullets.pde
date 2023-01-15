@@ -135,6 +135,9 @@ class TrackerBullet extends Bullet {
     if(toFollow!=null){
       float angleToEnemy = MySystem.angleTo(this,toFollow);
       
+      angleToEnemy = ((angleToEnemy%TWO_PI) + TWO_PI)%TWO_PI;
+      course.ang = course.ang = ((course.ang%TWO_PI) + TWO_PI)%TWO_PI;
+      
       if(abs(angleToEnemy-course.ang)>PI){
         if(course.ang<angleToEnemy){
           course=course.rotate(-rotP*fpsAdjust);
